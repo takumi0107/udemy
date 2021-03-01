@@ -18,11 +18,11 @@
     ],
     "ios": {
       "supportsTablet": false,
-      "bundleIdentrifier": "jp.workbroad.super-memoapp3",
-      "buildnumber": "1.0.0"
+      "bundleIdentifier": "jp.workbroad.supermemoapp3",
+      "buildNumber": "1.0.0"
     },
     "android": {
-      "package": "jp.workbroad.super-memoapp3",
+      "package": "jp.workbroad.supermemoapp3",
       "versionCode": 1,
       "permissions": [],
       "adaptiveIcon": {
