@@ -5,7 +5,7 @@ import CircleButton from '../components/CircleButton';
 import { shape, string } from 'prop-types'
 import firebase from 'firebase';
 import { translateErrors } from '../utils'
-
+import KeyboardSafeView from '../components/KeyboardSafeView'
 export default function MemoEditScreen(props) {
     const { navigation, route } = props;
     const { id, bodyText} = route.params;
@@ -31,7 +31,7 @@ export default function MemoEditScreen(props) {
     }
 
     return(
-        <KeyboardAvoidingView style={styles.container} behavior="height">
+        <KeyboardSafeView style={styles.container} >
          <View style={styles.inputContainer}>
              <TextInput 
              value={body} 
@@ -42,7 +42,7 @@ export default function MemoEditScreen(props) {
          <CircleButton 
          name="check" 
          onPress={() => {handlePress()}} />
-        </KeyboardAvoidingView>
+        </KeyboardSafeView>
     );
 }
 

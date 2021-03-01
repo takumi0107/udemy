@@ -82,7 +82,6 @@ const styles = StyleSheet.create({
         paddingTop: 32,
         paddingBottom: 80,
         paddingHorizontal: 27,
-        paddingVertical: 100
     },
     memoText: {
         fontSize: 16,

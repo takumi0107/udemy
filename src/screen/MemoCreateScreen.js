@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { View, TextInput, StyleSheet, KeyboardAvoidingView, Alert } from 'react-native'
+import { View, TextInput, StyleSheet, KeyboardAvoidingView, Alert, Keyboard } from 'react-native'
 
 import CircleButton from '../components/CircleButton';
 
 import firebase from 'firebase';
 import { translateErrors } from '../utils';
+import KeyboardSafeView from '../components/KeyboardSafeView'
 
 export default function MemoCreateScreen(props) {
     const { navigation } = props;
@@ -28,7 +29,7 @@ export default function MemoCreateScreen(props) {
           });
     }
     return(
-        <KeyboardAvoidingView style={styles.container} behavior="height">
+        <KeyboardSafeView style={styles.container} >
          <View style={styles.inputContainer}>
              <TextInput 
              value={bodyText} 
@@ -36,12 +37,13 @@ export default function MemoCreateScreen(props) {
              style={styles.input} 
              onChangeText={(text) => { setBodyText(text); }}
              autoFocus={true}
+             onSubmitEditing={Keyboard.dismiss}
              />
          </View>
          <CircleButton 
          name="check"
          onPress={handlePress} />
-        </KeyboardAvoidingView>
+        </KeyboardSafeView>
     );
 }
 
